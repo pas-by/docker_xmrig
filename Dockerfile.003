@@ -4,6 +4,8 @@ RUN useradd -ms /bin/bash -d /home/app app
 WORKDIR /home/app
 RUN apt update && apt upgrade -y
 RUN apt install -y joe htop sudo dos2unix
+RUN usermod -aG sudo app
+RUN echo 'app:12345678' | chpasswd
 RUN apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 
 USER app
