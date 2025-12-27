@@ -1,0 +1,6 @@
+version: "3"
+services:
+    work_horse:
+        build:
+            context: .
+            dockerfile: Dockerfile.003
