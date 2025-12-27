@@ -8,7 +8,8 @@ RUN apt install git build-essential cmake libuv1-dev libssl-dev libhwloc-dev -y
 
 USER app
 COPY --chown=app:app ./xmrig ./xmrig
-COPY --chown=app:app run.sh .
+COPY --chown=app:app --chmod=0755 run.sh .
 
 #  CMD [ "sleep", "infinity" ]
 CMD [ "/home/app/run.sh" ]
+
